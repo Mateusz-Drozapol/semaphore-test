@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+    - name: Gather facts from Chocolatey CLI
+      win_chocolatey_facts:
+
+    - name: Upgrade installed packages
+      win_chocolatey:
+        name: '{{ item.package }}'
+        state: latest
+      failed_when: false # Setting this means if one package fails, the loop wi>
+      loop: '{{ ansible_chocolatey.packages }}' # This variable comes from the >
+...
