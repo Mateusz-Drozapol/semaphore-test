@@ -2,5 +2,9 @@
 - hosts: wazuh test 
   become: true
   tasks:
-    - name: Example from an Ansible Playbook
-      ansible.builtin.ping:
+    - name: Update apt and install required system packages
+      apt:
+        pkg:
+          - neofetch 
+        state: latest
+        update_cache: true
