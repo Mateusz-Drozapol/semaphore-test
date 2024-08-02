@@ -1,0 +1,10 @@
+---
+- hosts: win
+  gather_facts: true
+  tasks:
+  - name: install firefox
+    win_chocolatey:
+       name=notepadplusplus
+       state=present
+
+
