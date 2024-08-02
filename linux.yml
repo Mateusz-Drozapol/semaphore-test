@@ -1,0 +1,6 @@
+---
+- hosts: wazuh test 
+  become: true
+  tasks:
+    - name: Example from an Ansible Playbook
+      ansible.builtin.ping:
